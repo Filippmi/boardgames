@@ -9,4 +9,6 @@ ActiveRecord::Base.establish_connection(
 )
 
 require './app/controllers/application_controller'
+require './app/controllers/BG_controller'
+require './app/controllers/user_controller'
 require_all 'app'

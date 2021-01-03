@@ -1,3 +1,3 @@
-class Boardgame < ApplicationController
+class BoardgameController < ApplicationController
 
 end
