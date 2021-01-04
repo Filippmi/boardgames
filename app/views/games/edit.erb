@@ -1,0 +1,22 @@
+<h3>Edit <%= @game.title %></h3>
+
+<form action="/games/<%= @game.id %>" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <div class="input-field">
+        <input id="title" name="game[title]" type="text" value="<%= @game.title %>">
+        <label for="title">Title</label>
+    </div>
+    <div class="input-field">
+        <input type="text" name="game[genre]" id="genre" value="<%= @game.genre %>">
+        <label for="genre">Genre</label>
+    </div>
+    <div class="input-field">
+        <input id="rating" name="game[rating]" type="number" min="1" max="10" value="<%= @game.rating %>">
+        <label for="rating">Your rating from 1-10</label>
+    </div>
+    <div class="input-field">
+        <input id="number_of_players" name="game[number_of_players]" type="number" min="1" max="30" value="<%= @game.number_of_players %>">
+        <label for="number_of_players">Number Of Players</label>
+    </div>
+    <input type="submit" value="Edit" class="btn">
+</form>

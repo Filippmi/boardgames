@@ -2,16 +2,16 @@
 restful routes
 
 GET Route
-    - index route - /bg (list of boardgames)
-    - show route - /bg/:id (shows more information about a boardgame)
-    - new route - /bg/new (display a form to create a new boardgame)
-    - edit route - /bg/:id/edit (display form to edit an existing boardgame)  
+    - index route - /games (list of games)
+    - show route - /games/:id (shows more information about a game)
+    - new route - /games/new (display a form to create a new game)
+    - edit route - /games/:id/edit (display form to edit an existing game)  
 
 POST Route
-    - create route - /bg (creating a new boardgame)
+    - create route - /games (creating a new game)
 
 PATCH Route
-    - update route - /bg/:id (update info about a boardgame)
+    - update route - /games/:id (update info about a game)
 
 DELETE Route
-    - delete route - /bg/:id (deleting a boardgame)
+    - delete route - /games/:id (deleting a game)

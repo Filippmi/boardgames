@@ -5,10 +5,15 @@ class GamesController < ApplicationController
     end
 
     get '/games/:id' do
-        @game = Game.find_by_id(params[:id])
+        find_game
         erb :'games/show'
     end
 
+    get '/games/:id/edit' do
+        find_game
+        erb :'games/edit'
+    end
+    
     get '/games' do
         @games = Game.all
 
@@ -24,4 +29,18 @@ class GamesController < ApplicationController
             redirect '/games/new'
         end
     end
+
+    patch '/games/:id' do
+        find_game
+        if @game.update(params[:game])
+            redirect "/games/#{@game.id}"
+        else
+            redirect "/games/#{@game.id}/edit"
+        end
+    end
+
+    private
+        def find_game
+            @game = Game.find_by_id(params[:id])
+        end
 end

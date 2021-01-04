@@ -2,3 +2,13 @@
 <p>Genre: <%= @game.genre %></p>
 <p>Rating: <%= @game.rating %></p>
 <p>Number of Player: <%= @game.number_of_players %></p>
+
+
+
+<form action="/games/<%= @game.id %>" method="post">
+    <div class="row">
+        <div class="col s2"><a href="/games/<%= @game.id %>/edit">Edit Game</a></div>
+        <input type="hidden" name="_method" valuse="delete">
+        <input type="submit" value="Delete Game" class="btn-small red col s2 offset-s10">
+    </div>
+</form>
