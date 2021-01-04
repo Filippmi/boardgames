@@ -1,0 +1,21 @@
+<h3>Create a new game</h3>
+
+<form action="/games" method="post">
+    <div class="input-field">
+        <input id="title" name="game[title]" type="text">
+        <label for="title">Title</label>
+    </div>
+    <div class="input-field">
+        <input type="text" name="game[genre]" id="genre">
+        <label for="genre">Genre</label>
+    </div>
+    <div class="input-field">
+        <input id="rating" name="game[rating]" type="number" min="1" max="10">
+        <label for="rating">Your rating from 1-10</label>
+    </div>
+    <div class="input-field">
+        <input id="number_of_players" name="game[number_of_players]" type="number" min="1" max="30">
+        <label for="number_of_players">Number Of Players</label>
+    </div>
+    <input type="submit" value="Create" class="btn">
+</form>
