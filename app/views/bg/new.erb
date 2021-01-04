@@ -1,0 +1,27 @@
+<h3>Create a new game</h3>
+
+<form action="/bg" method="post">
+    <div class="input-field">
+        <input id="title" name="title" type="text">
+        <label for="title">Title</label>
+    </div>
+    <div class="input-field">
+        <input type="text" class="datepicker" name="publication_date" id="publication_date">
+        <label for="publication_date">Publication Date</label>
+    </div>
+    <div class="input-field">
+        <input id="creator" name="creator" type="text">
+        <label for="creator">Creator</label>
+    </div>
+    <div class="input-field">
+        <input id="number_of_players" name="number_of_players" type="text">
+        <label for="number_of_players">Number of players</label>
+    </div>
+</form>
+
+
+<script>
+    $(document).ready(function(){
+        $('.datepicker').datepicker();
+    });
+</script>

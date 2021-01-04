@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20210103204135) do
   create_table "boardgames", force: :cascade do |t|
     t.string   "title"
     t.date     "publishing_date"
-    t.string   "creater"
+    t.string   "creator"
     t.integer  "number_of_players"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
