@@ -1,6 +1,6 @@
-<h1>Your List</h1>
+<h3>Your Game List</h3>
 <ul>
     <% @games.each do |game| %>
-        <li><a href="/games/<%= game.id %>"><%= game.title %></a></li>
+        <li><a href="/gg/<%= game.id %>"><%= game.title %></a></li>
     <%end%>
 </ul>
