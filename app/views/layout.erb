@@ -21,10 +21,14 @@
       <div class="nav-wrapper container">
         <a href="/" class="brand-logo right">Home</a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
-          <li><a href="/login">Login</a></li>
-          <li><a href="/signup">Signup</a></li>
-          <li><a href="/gg">My games</a></li>
-          <li><a href="/gg/new">Create a new Game</a></li>
+          <% if !logged_in? %>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">Signup</a></li>
+          <% else %>
+            <li><a href="/logout">Logout</a></li>
+            <li><a href="/gg">My games</a></li>
+            <li><a href="/gg/new">Create a new Game</a></li>
+          <% end %>
         </ul>
       </div>
     </nav>
