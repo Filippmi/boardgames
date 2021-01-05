@@ -3,7 +3,6 @@ class GroupGamesController < ApplicationController
     get '/gg/new' do
         erb :'gg/new'
     end
-
     
     get '/gg/:id' do #dynamic route
         find_game
