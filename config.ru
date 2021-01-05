@@ -7,5 +7,5 @@ end
 use Rack::MethodOverride
 
 use GroupGamesController
-use UserController
+use SessionsController
 run ApplicationController
