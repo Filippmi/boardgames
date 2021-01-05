@@ -4,19 +4,20 @@ class GroupGamesController < ApplicationController
         erb :'gg/new'
     end
 
+    
     get '/gg/:id' do #dynamic route
         find_game
         session[:game_id] = @game.id if @game #sets the session id to a game id and makes a cookie
         if_not_found_redirect
         erb :'gg/show'
     end
-
-    get '/gg/:id/edit' do #dynamic route
-        fdirect
-        erb :'gg/edit'
-        if_not_found_redirect
-    end
     
+    get '/gg/:id/edit' do #dynamic route
+        find_game
+        if_not_found_redirect
+        erb :'gg/edit'
+    end
+
     get '/gg' do
         @games = Game.all
         @game = Game.find_by_id(session[:game_id])
