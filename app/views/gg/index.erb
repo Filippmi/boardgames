@@ -1,4 +1,8 @@
 <h3>Your Game List</h3>
+
+<p>Last Veiwed: <%= @game ? @game.title : "You have not veiwed anything recently." %></p>
+
+
 <ul>
     <% @games.each do |game| %>
         <li><a href="/gg/<%= game.id %>"><%= game.title %></a></li>
