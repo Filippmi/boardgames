@@ -24,14 +24,13 @@ class GroupGamesController < ApplicationController
 
     get '/gamelist' do
         redirect_if_not_logged_in
-        @games = current_user.games
+        @games = current_user.games #only allowes the current user to see their own games
         @game = Game.find_by_id(session[:game_id])
         erb :'/gg/index'
     end
 
     post '/gamelist' do
-        game = current_user.games.build(params[:game])
-        
+        game = current_user.games.build(params[:game]) #establishes connection between a user and their games
         if game.save
             redirect '/gamelist'
         else
@@ -39,7 +38,7 @@ class GroupGamesController < ApplicationController
         end
     end
 
-    patch '/gamelist/:id' do #dynamic route
+    patch '/gamelist/:id' do
         find_game
         if_not_found_redirect
         if @game.update(params[:game])
@@ -49,7 +48,7 @@ class GroupGamesController < ApplicationController
         end
     end
 
-    delete '/gamelist/:id' do #dynamic route
+    delete '/gamelist/:id' do
         find_game
         if_not_found_redirect
         redirect_if_not_user
@@ -68,7 +67,9 @@ class GroupGamesController < ApplicationController
         #helps keep the webapp from breaking
     end
 
-    def redirect_if_not_user #authorization
+    def redirect_if_not_user 
         redirect "/gamelist" unless @game.user == current_user
+        #authorization
+        #helps keep the webapp from breaking do to unauthorized users.
     end
 end
