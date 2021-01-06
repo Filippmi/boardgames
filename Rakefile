@@ -11,13 +11,14 @@ end
 
 desc "Migrates both databases"
 task :migrations do
-    puts "Migratinf databases"
+    puts "Migrating databases"
     system "rake db:migrate && rake db:migrate SINNATRA_ENV=test"
 end
 
 desc "Resets database"
 task :reset_db do
-    Rake::Task["drop"]
-    Rake::Task['migrations']
+    puts "reseting.."
+    Rake::Task["drop"].execute
+    Rake::Task['migrations'].execute
     system "shotgun"
 end
