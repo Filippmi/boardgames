@@ -5,8 +5,8 @@
 
 <form action="/gamelist/<%= @game.id %>" method="post">
     <div class="row">
-        <a href="/gamelist/<%= @game.id %>/edit">Edit Game</a>
+        <a href="/gamelist/<%= @game.id %>/edit" class="btn-small">Edit Game</a>
         <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="Delete Game" class="btn-small red col s2 offset-s10">
+        <input type="submit" value="Delete Game" class="btn-small red">
     </div>
 </form>
