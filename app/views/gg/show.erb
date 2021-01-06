@@ -3,9 +3,9 @@
 <p>Rating: <%= @game.rating %></p>
 <p>Number of Player: <%= @game.number_of_players %></p>
 
-<form action="/gg/<%= @game.id %>" method="post">
+<form action="/gamelist/<%= @game.id %>" method="post">
     <div class="row">
-        <a href="/gg/<%= @game.id %>/edit">Edit Game</a>
+        <a href="/gamelist/<%= @game.id %>/edit">Edit Game</a>
         <input type="hidden" name="_method" value="delete">
         <input type="submit" value="Delete Game" class="btn-small red col s2 offset-s10">
     </div>

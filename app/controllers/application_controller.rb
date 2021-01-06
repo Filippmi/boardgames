@@ -19,7 +19,7 @@ class ApplicationController < Sinatra::Base
 
   helpers do
     def logged_in?
-      !!session[:current_user_id]
+      !!session[:user_id]
     end
 
     def redirect_if_logged_in #authorization 

@@ -1,52 +1,56 @@
 class GroupGamesController < ApplicationController
 
-    get '/gg/new' do
+    get '/gamelist/new' do
+        redirect_if_not_logged_in
         erb :'gg/new'
     end
     
-    get '/gg/:id' do #dynamic route
+    get '/gamelist/:id' do #dynamic route
+        redirect_if_not_logged_in
         find_game
         session[:game_id] = @game.id if @game #sets the session id to a game id and makes a cookie
         if_not_found_redirect
         erb :'gg/show'
     end
     
-    get '/gg/:id/edit' do #dynamic route
+    get '/gamelist/:id/edit' do #dynamic route
+        redirect_if_not_logged_in
         find_game
         if_not_found_redirect
         erb :'gg/edit'
     end
 
-    get '/gg' do
+    get '/gamelist' do
+        redirect_if_not_logged_in
         @games = Game.all
         @game = Game.find_by_id(session[:game_id])
         erb :'/gg/index'
     end
 
-    post '/gg' do
+    post '/gamelist' do
         game = Game.new(params[:game])
-
+        
         if game.save
-            redirect '/gg'
+            redirect '/gamelist'
         else
-            redirect '/gg/new'
+            redirect '/gamelist/new'
         end
     end
 
-    patch '/gg/:id' do #dynamic route
+    patch '/gamelist/:id' do #dynamic route
         find_game
         if_not_found_redirect
         if @game.update(params[:game])
-            redirect "/gg/#{@game.id}"
+            redirect "/gamelist/#{@game.id}"
         else
-            redirect "/gg/#{@game.id}/edit"
+            redirect "/gamelist/#{@game.id}/edit"
         end
     end
 
-    delete '/gg/:id' do #dynamic route
+    delete '/gamelist/:id' do #dynamic route
         find_game
         @game.destroy if @game
-        redirect "/gg"
+        redirect "/gamelist"
     end
 
     private
@@ -56,6 +60,6 @@ class GroupGamesController < ApplicationController
     #checks for a game and redirects if no game is found
     #helps keep the webapp from breaking
         def if_not_found_redirect
-            redirect "/gg" unless @game
+            redirect "/gamelist" unless @game
         end
 end
