@@ -29,5 +29,9 @@ class ApplicationController < Sinatra::Base
     def redirect_if_not_logged_in #authorization 
       redirect "/login" unless logged_in?
     end
+
+    def current_user
+      User.find_by_id(session[:user_id])
+    end
   end
 end
