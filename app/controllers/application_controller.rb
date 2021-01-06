@@ -10,7 +10,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    redirect '/home'
+    redirect "/home"
   end
 
   get "/home" do
