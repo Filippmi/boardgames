@@ -28,15 +28,16 @@
           <% else %>
             <a href="/home" class="brand-logo right"> Hello <%= current_user.username %></a>
             <li><a href="/logout">Logout</a></li>
-            <li><a href="/gamelist">My games</a></li>
-            <li><a href="/gamelist/new">Create a new Game</a></li>
+            <li><a href="/my_games">My games</a></li>
+            <li><a href="/create_game/new">Create a new Game</a></li>
+            <li><a href="/create_game/new"></a></li>
           <% end %>
         </ul>
       </div>
     </nav>
 
     <div class="container">
-    <%= yield %>
+      <%= yield %>
     </div>
 
       <!--[if lt IE 7]>

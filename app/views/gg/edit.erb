@@ -1,6 +1,6 @@
 <h3>Edit <%= @game.title %></h3>
 
-<form action="/gamelist/<%= @game.id %>" method="post">
+<form action="/my_games/<%= @game.id %>" method="post">
     <input type="hidden" name="_method" value="patch">
     <div class="input-field">
         <input id="title" name="game[title]" type="text" value="<%= @game.title %>">

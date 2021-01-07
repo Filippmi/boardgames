@@ -23,7 +23,7 @@ class ApplicationController < Sinatra::Base
     end
 
     def redirect_if_logged_in #authorization 
-      redirect "/gamelist" if logged_in?
+      redirect "/my_games" if logged_in?
     end
 
     def redirect_if_not_logged_in #authorization 

@@ -6,7 +6,7 @@
 <div class="center">
     <ul>
         <% @games.each do |game| %>
-            <li><a href="/gamelist/<%= game.id %>"><%= game.title %></a></li>
+            <li><a href="/my_games/<%= game.id %>"><%= game.title %></a></li>
         <%end%>
     </ul>
 </div>

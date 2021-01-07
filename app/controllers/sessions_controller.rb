@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
         user = User.new(params[:user])
         if user.save
             session[:user_id] = user.id #this is where the user is getting logged in
-            redirect "/gamelist"
+            redirect "/my_games"
         else
             redirect "/signup"
         end
@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
         
         if user && user.authenticate(params[:user][:password]) # checks to see if current_users password matches. "validates user"
             session[:user_id] = user.id #logging in to sessions
-            redirect "/gamelist"
+            redirect "/my_games"
         else
             redirect "/login"
         end
