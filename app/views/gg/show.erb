@@ -1,12 +1,15 @@
-<h3><%= @game.title %></h3>
-<p>Genre: <%= @game.genre %></p>
-<p>Rating: <%= @game.rating %></p>
-<p>Number of Player: <%= @game.number_of_players %></p>
+<div class="center">
+    <h3><%= @game.title %></h3>
+    <p>Genre: <%= @game.genre %></p>
+    <p>Rating: <%= @game.rating %></p>
+    <p>Number of Player: <%= @game.number_of_players %></p>
 
-<form action="/my_games/<%= @game.id %>" method="post">
-    <div class="row">
-        <a href="/my_games/<%= @game.id %>/edit" class="btn-small">Edit Game</a>
-        <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="Delete Game" class="btn-small red">
-    </div>
-</form>
+
+    <form action="/my_games/<%= @game.id %>" method="post">
+        <div class="row">
+            <a href="/my_games/<%= @game.id %>/edit" class="btn-small">Edit Game</a>
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Delete Game" class="btn-small red">
+        </div>
+    </form>
+</div>
