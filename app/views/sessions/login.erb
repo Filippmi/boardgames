@@ -3,13 +3,17 @@
 </div>
 
 <form action="/login" method="post">
-    <div class="input-field, center">
-        <input id="username" name="user[username]" type="text" class="center">
-        <label for="username">Username</label>
+    <div class="row, container">
+        <div class="col s4">
+            <div class="input-field, center">
+                <input id="username" name="user[username]" type="text" class="center">
+                <label for="username">Username</label>
+            </div>
+        </div>
+        <div class="col s5, input-field, center">
+            <input type="password" name="user[password]" id="password" class="center">
+            <label for="password">Password</label>
+        </div>
+        <input type="submit" value="Login" class="btn">
     </div>
-    <div class="input-field, center">
-        <input type="password" name="user[password]" id="password" class="center">
-        <label for="password">Password</label>
-    </div>
-    <input type="submit" value="Login" class="btn">
 </form>
