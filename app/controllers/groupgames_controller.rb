@@ -1,6 +1,6 @@
 class GroupGamesController < ApplicationController
 
-    get '/create_game/new' do
+    get '/save_game/new' do
         redirect_if_not_logged_in
         erb :'gg/new'
     end
@@ -30,7 +30,7 @@ class GroupGamesController < ApplicationController
     end
 
     post '/my_games' do
-        game = current_user.games.build(params[:game]) #establishes connection between a user and their games
+        game = current_user.games.build(params[:game]) #establishes connection between a user and their games\
         if game.save
             redirect '/my_games'
         else

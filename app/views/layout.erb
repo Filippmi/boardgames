@@ -26,11 +26,10 @@
             <li><a href="/login">Login</a></li>
             <li><a href="/signup">Signup</a></li>
           <% else %>
-            <a href="/home" class="brand-logo right"> Hello, <%= current_user.username %></a>
+            <a href="/home" class="brand-logo right"> Hello,<%= current_user.username %></a>
             <li><a href="/logout">Logout</a></li>
             <li><a href="/my_games">My games</a></li>
-            <li><a href="/create_game/new">Create a new Game</a></li>
-            <li><a href="/create_game/new"></a></li>
+            <li><a href="/save_game/new">Save a new Game</a></li>
           <% end %>
         </ul>
       </div>
