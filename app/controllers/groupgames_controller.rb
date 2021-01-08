@@ -34,7 +34,7 @@ class GroupGamesController < ApplicationController
         if game.save
             redirect '/my_games'
         else
-            redirect '/create_game/new'
+            redirect '/save_game/new'
         end
     end
 
@@ -53,7 +53,7 @@ class GroupGamesController < ApplicationController
         if_not_found_redirect
         redirect_if_not_user
         @game.destroy
-        redirect "/gamelist"
+        redirect "/my_games"
     end
 
     private
