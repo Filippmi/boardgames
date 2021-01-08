@@ -31,7 +31,7 @@ class GroupGamesController < ApplicationController
 
     post '/my_games' do
         game = current_user.games.build(params[:game]) #establishes connection between a user and their games\
-        if game.save
+        if current_user.games.where(title: params[:game][:title]).empty? && game.save
             redirect '/my_games'
         else
             redirect '/save_game/new'

@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
     post '/login' do
         user = User.find_by_username(params[:user][:username]) # checks to see if current_user exists
         
-        if user && user.authenticate(params[:user][:password]) # checks to see if current_users password matches. "validates user"
+        if user && user.authenticate(params[:user][:password]) # checks to see if current_users password matches. "authenticaton user"
             session[:user_id] = user.id #logging in to sessions
             redirect "/my_games"
         else
