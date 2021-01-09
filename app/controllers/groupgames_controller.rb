@@ -1,5 +1,11 @@
 class GroupGamesController < ApplicationController
-
+    get "/my_games" do
+        redirect_if_not_logged_in
+        @games = current_user.games #only allowes the current user to see their own games
+        @game = Game.find_by_id(session[:game_id])
+        erb :'/gg/index'
+    end
+    
     get '/save_game/new' do
         redirect_if_not_logged_in
         erb :'gg/new'
@@ -22,12 +28,6 @@ class GroupGamesController < ApplicationController
         erb :'gg/edit'
     end
 
-    get "/my_games" do
-        redirect_if_not_logged_in
-        @games = current_user.games #only allowes the current user to see their own games
-        @game = Game.find_by_id(session[:game_id])
-        erb :'/gg/index'
-    end
 
     post '/my_games' do
         game = current_user.games.build(params[:game]) #establishes connection between a user and their games\
