@@ -13,6 +13,7 @@
     - Once thats complete, in your terminal run
         $ cd groupgames
         $ bundle install
+        $ rake db:migrate
         $ shotgun
     
     - Open a browser and in the url typr in:
