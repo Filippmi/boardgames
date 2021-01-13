@@ -5,6 +5,21 @@
 
 ## Installation
 
+    I was unable to host the webapp at this time so installation would have to go though git hub.
+
+    - Open up your terminal and run this command
+        $ git clone git@github.com:Filippmi/groupgames.git
+    
+    - Once thats complete, in your terminal run
+        $ cd groupgames
+        $ bundle install
+        $ rake db:migrate
+        $ shotgun
+    
+    - Open a browser and in the url typr in:
+        localhost:9393
+
+    - You'll be welcomed by my Group Games home page where you can log in and start saving those awesome games you love to play. 
     
 
 ## Contributing 
