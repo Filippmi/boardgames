@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     post '/signup' do
         user = User.new(params[:user])
         if user.save
-            session[:user_id] = user.id #this is where the user is getting logged in
+            session[:user_id] = user.id
             redirect "/my_games"
         else
             redirect "/signup"
@@ -25,10 +25,10 @@ class SessionsController < ApplicationController
     end
 
     post '/login' do
-        user = User.find_by_username(params[:user][:username]) # checks to see if current_user exists
+        user = User.find_by_username(params[:user][:username])
         
-        if user && user.authenticate(params[:user][:password]) # checks to see if current_users password matches. "authenticaton user"
-            session[:user_id] = user.id #logging in to sessions
+        if user && user.authenticate(params[:user][:password])
+            session[:user_id] = user.id
             redirect "/my_games"
         else
             redirect "/login"

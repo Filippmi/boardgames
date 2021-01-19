@@ -22,11 +22,11 @@ class ApplicationController < Sinatra::Base
       !!session[:user_id]
     end
 
-    def redirect_if_logged_in #authorization 
+    def redirect_if_logged_in
       redirect "/my_games" if logged_in?
     end
 
-    def redirect_if_not_logged_in #authorization 
+    def redirect_if_not_logged_in
       redirect "/login" unless logged_in?
     end
 
